@@ -6,13 +6,7 @@ var calipso = require("lib/calipso");
 
 exports = module.exports = {
   init: init,
-  route: route,
-  about: {
-    description: 'Adds disqus as the default commenting engine, applies by default to any content page (html suffix), but can be ammended to apply to other pages.',
-    author: 'cliftonc',
-    version: '0.1.1',
-    home:'http://github.com/cliftonc/calipso'
-  }
+  route: route
 };
 
 function route(req, res, module, app, next) {
