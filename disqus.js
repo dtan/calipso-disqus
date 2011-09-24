@@ -52,8 +52,8 @@ function init(module, app, next) {
 
 function disqus(req, res, template, block, next) {
 
-  var disqusShortName = req.app.set('disqus-shortname');
-  var disqusURL = req.app.set('server-url') + req.url;
+  var disqusShortName = calipso.config.get('modules:disqus:config:disqus-shortname');
+  var disqusURL = calipso.config.get('server:url') + req.url;
   var disqusID = ''; // TODO
   calipso.theme.renderItem(req, res, template, block, {
     disqusShortName: disqusShortName,
