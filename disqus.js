@@ -52,7 +52,7 @@ function init(module, app, next) {
 
 function disqus(req, res, template, block, next) {
 
-  var disqusShortName = calipso.config.get('modules:disqus:config:disqus-shortname');
+  var disqusShortName = calipso.config.get('modules:disqus:config:shortname');
   var disqusURL = calipso.config.get('server:url') + req.url;
   var disqusID = ''; // TODO
   calipso.theme.renderItem(req, res, template, block, {
