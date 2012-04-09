@@ -8,7 +8,14 @@ var rootpath = process.cwd() + '/',
 
 exports = module.exports = {
   init: init,
-  route: route
+  route: route,
+  config: { 
+      "shortname": {
+        "default": "calipsojs",
+        "label": "Short Name",
+        "description": "This is the disqus short name for the current site."                
+      }
+  }
 };
 
 function route(req, res, module, app, next) {
@@ -52,7 +59,7 @@ function init(module, app, next) {
 
 function disqus(req, res, template, block, next) {
 
-  var disqusShortName = calipso.config.get('modules:disqus:config:shortname');
+  var disqusShortName = calipso.config.getModuleConfig('disqus','shortname');
   var disqusURL = calipso.config.get('server:url') + req.url;
   var disqusID = ''; // TODO
   calipso.theme.renderItem(req, res, template, block, {
